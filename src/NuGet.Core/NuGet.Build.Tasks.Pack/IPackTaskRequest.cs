@@ -1,4 +1,4 @@
-﻿// Copyright (c) .NET Foundation. All rights reserved.
+// Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using Microsoft.Build.Framework;
@@ -27,7 +27,6 @@ namespace NuGet.Build.Tasks.Pack
         string Description { get; }
         bool DevelopmentDependency { get; }
         TItem[] FrameworkAssemblyReferences { get; }
-        TItem[] FrameworksWithSuppressedAssemblyReferences { get; }
         TItem[] FrameworksWithSuppressedDependencies { get; }
         string IconUrl { get; }
         bool IncludeBuildOutput { get; }
