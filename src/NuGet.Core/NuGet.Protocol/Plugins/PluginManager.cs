@@ -164,6 +164,16 @@ namespace NuGet.Protocol.Core.Types
             return CreatePluginAsync(pluginDiscoveryResult, new PluginRequestKey(pluginDiscoveryResult.PluginFile.Path, "Source-Agnostic"), null, null, cancellationToken);
         }
 
+        public Task<PluginCreationResult> CreatePluginAsync(PluginDiscoveryResult pluginDiscoveryResult, string packageSourceRepository, CancellationToken cancellationToken)
+        {
+            if (pluginDiscoveryResult == null)
+            {
+                throw new ArgumentNullException(nameof(pluginDiscoveryResult));
+            }
+
+            return CreatePluginAsync(pluginDiscoveryResult, new PluginRequestKey(pluginDiscoveryResult.PluginFile.Path, packageSourceRepository), packageSourceRepository, null, cancellationToken);
+        }
+
         private async Task<PluginCreationResult> CreatePluginAsync(PluginDiscoveryResult result, PluginRequestKey requestKey, string packageSourceRepository, JObject serviceIndex, CancellationToken cancellationToken)
         {
             PluginCreationResult pluginCreationResult = null;

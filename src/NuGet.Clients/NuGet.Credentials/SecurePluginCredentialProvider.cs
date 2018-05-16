@@ -85,7 +85,7 @@ namespace NuGet.Credentials
                 return taskResponse;
             }
 
-            var plugin = await _pluginManager.CreateSourceAgnosticPluginAsync(_discoveredPlugin, cancellationToken);
+            var plugin = await _pluginManager.CreatePluginAsync(_discoveredPlugin, uri.ToString(), cancellationToken);
 
             _isAnAuthenticationPlugin = plugin.Claims.Contains(OperationClaim.Authentication);
 

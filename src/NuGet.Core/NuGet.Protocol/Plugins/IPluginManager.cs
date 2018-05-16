@@ -38,5 +38,7 @@ namespace NuGet.Protocol.Plugins
         /// <param name="cancellationToken"></param>
         /// <returns>A PluginCreationResult</returns>
         Task<PluginCreationResult> CreateSourceAgnosticPluginAsync(PluginDiscoveryResult pluginDiscoveryResult, CancellationToken cancellationToken);
+
+        Task<PluginCreationResult> CreatePluginAsync(PluginDiscoveryResult pluginDiscoveryResult, string packageSourceRepository, CancellationToken cancellationToken);
     }
 }
